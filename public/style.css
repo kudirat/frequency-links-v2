@@ -60,3 +60,9 @@ button {
   height:400px;
   margin:25px auto 0;
 }
+
+#square {
+  width: 100px;
+  height: 100px;
+  background-color: blueviolet;
+}
