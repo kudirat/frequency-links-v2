@@ -100,7 +100,7 @@ async function setup() {
     title.position(10, -10);
     title.class('title');
     //create subtitle
-    subtitle = createElement('p', 'a multi-person audio work');
+    subtitle = createElement('p', 'based off the frequency links project - a multi-person audio work');
     subtitle.parent('main');
     subtitle.position(10, 25);
     subtitle.class('subtitle');
