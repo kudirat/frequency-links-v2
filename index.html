@@ -1,31 +1,52 @@
 <!DOCTYPE html>
 <html lang="eng">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=.7"/>
-    <meta name="description" content="frequency links (2023). a multi-player synthesizer" />
-    <meta name="robots" content="index,follow" />
-    <meta property="og:title" content="frequency links (2023)" />
-    <meta property="og:type" content="article" />
-    <meta property="og:url"/>
-    <meta property="og:description" content="frequency links by Tommy (2023)" />
-    <meta
-      property="og:image"
-      content="https://frequency-links.vercel.app/holdinghands.png"
-    />
-    <meta name="twitter:card" content="summary" />
-    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.8/lib/p5.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/p5.sound@latest/dist/p5.sound.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="/socket.io/socket.io.js"></script>
-    <title>frequency-links</title>
-  </head>
-  <body>
-    <div id="main">
-      <input id="rotation-slider" type="range" min="0" max="360" step="1">
-      <div id="square"></div>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=.7" />
+  <meta name="description" content="frequency links (2023). a multi-player synthesizer" />
+  <meta name="robots" content="index,follow" />
+  <meta property="og:title" content="frequency links (2023)" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" />
+  <meta property="og:description" content="frequency links by Tommy (2023)" />
+  <meta property="og:image" content="https://frequency-links.vercel.app/holdinghands.png" />
+  <meta name="twitter:card" content="summary" />
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.11.8/lib/p5.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/p5.sound@latest/dist/p5.sound.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="/socket.io/socket.io.js"></script>
+  <title>frequency-colors</title>
+</head>
+
+<body>
+  <div id="main-container">
+    <div id="square-canvas">
+      <form id="user-form">
+        <div class="form-row" id="alias-row">
+          <label id="alias-title">Alias?</label>
+          <input type="text" id="alias" name="user1-alias" value="tester1">
+        </div>
+        <div class="form-row" id="favcolor-row">
+          <label id="favcolor-title">Select a color:</label>
+          <input type="color" id="favcolor" name="user1-color" value="#87CEEB">
+        </div>
+        <div class="form-row" id="txt-msg-row">
+          <label id="txt-msg-title">Type a message:</label>
+          <input type="text" id="txt-msg" name="user1-msg" value="hello">
+        </div>
+        <div class="form-row" id="speed-slider-row">
+          <label id="speed-slider-title">Select a speed:</label>
+          <input id="speed-slider" type="range" min="0" max="360" step="1">
+        </div>
+        <div class="form-row" id="submit-btn-row">
+          <input id="submit-btn" type="submit" value="Submit">
+        </div>
+      </form>
     </div>
-    <!-- <div id="square"></div> -->
-    <script src="sketch.js"></script>
-  </body>
+  </div>
+  <!-- <div id="square"></div> -->
+  <script src="sketch.js"></script>
+</body>
+
 </html>

@@ -1,5 +1,9 @@
-# frequency-links
+# frequency-colors
 
 a multi-user audio work
 
-uses socket.io to allow multiple participants to control the parameters of the same oscillator in p5.js and p5.sound.js.
+uses socket.io to allow multiple participants to send floating messages 
+
+how to use?
+
+enter an alias, color, message, speed, and submit

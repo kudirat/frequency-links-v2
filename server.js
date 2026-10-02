@@ -19,13 +19,11 @@ const server = app.listen(port, () => {
 const io = socketIO(server);
 
 io.on('connection', (socket) => {
-  console.log('Client connected');
-  console.log(socket.id);
-
-  //receives the rotation emitter from Client
-  socket.on("rotation", (arg) => {
-    console.log(arg);
-    io.emit('rotationResponse', arg);
+  console.log("Welcome client with socket id: " + socket.id);
+  //receives the submit-user-response emitter from Client
+  socket.on("submit-user-resp", (arg) => {
+    console.log("Server received response: " + JSON.stringify(arg));
+    io.emit('user-resp', arg);
   });
 
   socket.on('disconnect', () => console.log('Client disconnected'));

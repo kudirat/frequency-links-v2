@@ -1,68 +1,113 @@
 body {
-    margin:0;
-    padding:0;
-    min-height:100vh;
-    font-family: sans-serif;
-    font-size: 13px;
-    font-weight: 100;
-    }
-
-.controls {
-    margin:auto;
-    width:80%;  
-    text-align:center;  
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
 }
 
-button {
-  font-size:12;
-  font-family: 'Playfair', sans-serif;
-  font-style: italic;
-  font-style: oblique;
-  /* background-color:transparent; */
-  /* border-color:red; */
-  border-radius:1000px;
-  border-style:solid;
-  border-width:1px; 
-  width:60px;
-  height:20px;
-  cursor:pointer;
-  /* color:white; */
-  /* box-shadow:1px 2px 8px grey; */
-  margin-left:10px;
+
+#main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
 }
 
-.disappear {
-  opacity: 0;
-  height:0px;
-  margin:0px;
-  padding:0px;
-  visibility: hidden;
+#square-canvas {
+  width: 25%;
+  height: 30%;
+  display: flex;
+  border: 5px solid #466a9230;
 }
 
-#submit {
-  width:60px;
-  height:20px;
+#user-form {
+  display: flex;
+  flex-direction: column;
+}
+
+#alias-row {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  padding-top: 20px;
+}
+
+#alias-title {
+  margin-left: 80px;
+  padding-right: 10px;
+}
+
+#alias {
+  border: 1px solid #000;
+}
+
+#favcolor-row {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+
+}
+
+#favcolor-title {
+  margin-left: 80px;
+  padding-right: 10px;
+}
+
+#favcolor {
+  border: 1px solid #000;
+}
+
+#txt-msg-row {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+#txt-msg-title {
+  margin-left: 20px;
+  padding-right: 10px;
+}
+
+#txt-msg {
+  width: 150px;
+}
+
+#speed-slider-row {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+#speed-slider-title {
+  margin-left: 50px;
+  padding-right: 10px;
+}
+
+#speed-slider {
+  grid-area: sli;
+}
+
+#submit-btn-row {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+#submit-btn {
+  margin-left: 50px;
+  width: 60px;
+  height: 20px;
   font-family: sans-serif;
+  border: 2px solid #466a9230;
 }
 
-#buttonText {
-  width:60px;
-  height:20px;
-  font-family: sans-serif;
-}
-
-#main {
-  position:relative;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  width:400px;
-  height:400px;
-  margin:25px auto 0;
-}
-
-#square {
-  width: 100px;
-  height: 100px;
-  background-color: blueviolet;
+.message {
+  position: absolute;
+  margin: 5px 0;
+  padding: 5px;
+  border: 1px solid #000;
+  border-radius: 3px;
 }
