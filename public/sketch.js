@@ -23,6 +23,32 @@ let messageContainer = {
   speed: 0
 };
 
+const blockList = [
+  "fuck",
+  "shit",
+  "bitch",
+  "bastard",
+  "damn",
+  "hell",
+  "crap",
+  "ass",
+  "arse",
+  "bampot",
+  "bollocks",
+  "fucka",
+  "cunt",
+  "dick",
+  "cock",
+  "dumbass",
+  "dipshit",
+  "hoe",
+  "slut",
+  "jackass",
+  "motherfucker",
+  "whore"
+]
+
+const blockListRegex = new RegExp(`\\b(${blockList.join('|')})\\b`, 'i');
 
 //listen for submit button and do something with the input
 submitBtn.addEventListener("click", function (e) {
@@ -47,7 +73,23 @@ messages.push(msgContainer);
 });
 
 const buildMessage = (u) => {
+  u.message = validateMessage(u.message);
   return `${u.alias}: ${u.message}`;
+};
+
+const validateMessage = (msg) => {
+  // = msg.replace(/\s/g, "");
+  console.log("Validating message: " + msg);
+  if (blockListRegex.test(msg)) {
+    console.log("Blocked message detected: " + msg);
+    for (const word of blockList) {
+      
+      if (msg.includes(word)) {
+        msg = msg.replace(new RegExp(`\\b${word}\\b`, 'gi'), '***');
+      }
+    }
+  }
+  return msg;
 };
 
 
