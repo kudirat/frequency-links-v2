@@ -4,28 +4,26 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=.7" />
-  <meta name="description" content="frequency links (2023). a multi-player synthesizer" />
+  <meta name="description" content="frequency messages (2026). a message board" />
   <meta name="robots" content="index,follow" />
-  <meta property="og:title" content="frequency links (2023)" />
+  <meta property="og:title" content="frequency messages (2026)" />
   <meta property="og:type" content="article" />
   <meta property="og:url" />
-  <meta property="og:description" content="frequency links by Tommy (2023)" />
-  <meta property="og:image" content="https://frequency-links.vercel.app/holdinghands.png" />
+  <meta property="og:description" content="frequency messages by Kudirat Alimi (2026)" />
   <meta name="twitter:card" content="summary" />
-  <script src="https://cdn.jsdelivr.net/npm/p5@1.11.8/lib/p5.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/p5.sound@latest/dist/p5.sound.min.js"></script>
   <link rel="stylesheet" type="text/css" href="style.css">
   <script src="/socket.io/socket.io.js"></script>
-  <title>frequency-colors</title>
+  <title>frequency-messages</title>
 </head>
 
 <body>
   <div id="main-container">
-    <div id="square-canvas">
+    <!-- <div id="square-canvas"> -->
       <form id="user-form">
         <div class="form-row" id="alias-row">
           <label id="alias-title">Alias?</label>
-          <input type="text" id="alias" name="user1-alias" value="tester1">
+          <label id="prompt-title" class="hidden-element"></label>
+          <input type="text" id="alias" name="user1-alias" value="user1">
         </div>
         <div class="form-row" id="favcolor-row">
           <label id="favcolor-title">Select a color:</label>
@@ -43,10 +41,10 @@
           <input id="submit-btn" type="submit" value="Submit">
         </div>
       </form>
-    </div>
+    <!-- </div> -->
   </div>
   <!-- <div id="square"></div> -->
-  <script src="sketch.js"></script>
+  <script type="module" src="sketch.js"></script>
 </body>
 
 </html>

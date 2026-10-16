@@ -1,4 +1,4 @@
-const blockList = [
+export const blockList = [
   "fuck",
   "fucking",
   "shit",
@@ -23,3 +23,4 @@ const blockList = [
   "motherfucker",
   "whore"
 ]
+

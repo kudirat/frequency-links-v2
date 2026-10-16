@@ -3,6 +3,7 @@ body {
   padding: 0;
   width: 100vw;
   height: 100vh;
+  background-color: #030102;
 }
 
 
@@ -11,17 +12,18 @@ body {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100%;
-  position: relative;
+  justify-content: center; /* Centers horizontally */
+  align-items: center;     /* Centers vertically */
+  height: 100%;  
   overflow: hidden;
 }
 
-#square-canvas {
+/* #square-canvas {
   width: 25%;
   height: 30%;
   display: flex;
   border: 5px solid #466a9230;
-}
+} */
 
 #user-form {
   display: flex;
@@ -36,8 +38,9 @@ body {
 }
 
 #alias-title {
-  margin-left: 80px;
+  margin-left: 50px;
   padding-right: 10px;
+  color: #FAF9F6;
 }
 
 #alias {
@@ -52,8 +55,9 @@ body {
 }
 
 #favcolor-title {
-  margin-left: 80px;
+  margin-left: 50px;
   padding-right: 10px;
+  color: #FAF9F6;
 }
 
 #favcolor {
@@ -69,6 +73,7 @@ body {
 #txt-msg-title {
   margin-left: 20px;
   padding-right: 10px;
+  color: #FAF9F6;
 }
 
 #txt-msg {
@@ -84,6 +89,7 @@ body {
 #speed-slider-title {
   margin-left: 50px;
   padding-right: 10px;
+  color: #FAF9F6;
 }
 
 #speed-slider {
@@ -94,6 +100,7 @@ body {
   display: flex;
   justify-content: center;
   padding: 10px;
+  padding-top: 20px;
 }
 
 #submit-btn {
@@ -102,6 +109,18 @@ body {
   height: 20px;
   font-family: sans-serif;
   border: 2px solid #466a9230;
+}
+
+.hidden-element {
+  display: none;
+}
+
+#prompt-title {
+  /* margin-left: 50px; */
+  padding-left: 50px;
+  color: #FAF9F6;
+  justify-content: center;
+  align-items: center;
 }
 
 .message {

@@ -3,8 +3,9 @@ import { blockList } from './blockList.js';
 const socket = io();
 const mainContainer = document.querySelector('#main-container');
 const messages = [];
+const promptTitle = document.querySelector('#prompt-title');
 let lastTime = performance.now();
-let topics = ["What's one word to describe your day?", "Vent for a bit", "Share something you're grateful for!"];
+let topics = ["What's one word to describe your day?", "You can vent for a bit, don't hold back.", "Share something you're grateful for!", "How many hours of sleep did you get?!", "Try not to use any profanity in here!", "What's (3+6)/9*7?", "Tell a joke don't be shy!", "Did you laugh today?"];
 //target fields
 let aliasInput = document.querySelector('#alias')
 let colorPicker = document.querySelector('#favcolor')
@@ -47,6 +48,7 @@ socket.on("user-resp", (data) => {
   let currMessage = buildMessage(userResponse);
   console.log(currMessage);
   let msgContainer = buildMessageContainer(currMessage);
+  updateForm();
  displayMessage(msgContainer);
 messages.push(msgContainer);
 });
@@ -82,6 +84,20 @@ const buildMessageContainer = (msg) => {
   return temp;
 };
 
+const updateForm = () => {
+  //if prompt title is not hidden, hide alias and label, show prompt title with random topic
+  if (!document.querySelector('#alias-row').classList.contains('hidden-element')) {
+  document.querySelector('#alias-title').classList.add('hidden-element');
+  document.querySelector('#alias').classList.add('hidden-element');
+  document.querySelector('#favcolor-row').classList.add('hidden-element');
+  document.querySelector('#favcolor-title').classList.add('hidden-element');
+  document.querySelector('#favcolor').classList.add('hidden-element');
+  document.querySelector('#prompt-title').classList.remove('hidden-element');
+  } 
+    document.querySelector('#prompt-title').textContent = topics[Math.floor(Math.random() * topics.length)];
+
+}
+
 const displayMessage = (msgContainer) => {
   let messageElement = document.createElement('p');
   messageElement.classList.add('message');
@@ -98,7 +114,7 @@ const displayMessage = (msgContainer) => {
   msgContainer.posx = Math.random() * (mainContainer.clientWidth - rect.width);
   msgContainer.posy = Math.random() * (mainContainer.clientHeight - rect.height);
   messageElement.style.left = `${msgContainer.posx}px`;
-messageElement.style.top = `${msgContainer.posy}px`;
+  messageElement.style.top = `${msgContainer.posy}px`;
   msgContainer.el = messageElement;
 
   return messageElement;
