@@ -1,7 +1,10 @@
+import { blockList } from './blockList.js';
+
 const socket = io();
 const mainContainer = document.querySelector('#main-container');
 const messages = [];
 let lastTime = performance.now();
+let topics = ["What's one word to describe your day?", "Vent for a bit", "Share something you're grateful for!"];
 //target fields
 let aliasInput = document.querySelector('#alias')
 let colorPicker = document.querySelector('#favcolor')
@@ -23,30 +26,6 @@ let messageContainer = {
   speed: 0
 };
 
-const blockList = [
-  "fuck",
-  "shit",
-  "bitch",
-  "bastard",
-  "damn",
-  "hell",
-  "crap",
-  "ass",
-  "arse",
-  "bampot",
-  "bollocks",
-  "fucka",
-  "cunt",
-  "dick",
-  "cock",
-  "dumbass",
-  "dipshit",
-  "hoe",
-  "slut",
-  "jackass",
-  "motherfucker",
-  "whore"
-]
 
 const blockListRegex = new RegExp(`\\b(${blockList.join('|')})\\b`, 'i');
 
